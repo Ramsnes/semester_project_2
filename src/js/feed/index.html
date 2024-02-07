@@ -1,0 +1,195 @@
+<!-- feed index.html  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CodeSharing, sharing your code with the world"
+    />
+    <link rel="stylesheet" href="../../../dist/css/index.css" />
+    <link
+      rel="shortcut icon"
+      href="/images/favicon_io/favicon-16x16.png"
+      type="image/x-icon"
+    />
+    <title>Feed | CodeSharing</title>
+  </head>
+  <body>
+    <!-- nav  -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="collapse.show navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav fs-3 text">
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="../profile/index.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link current" href="/feed/index.html">Feed</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- nav end -->
+
+    <main>
+      <!-- Sort btn  -->
+      <section>
+        <h1 class="my-4">Feed page</h1>
+
+        <!-- Form to submit a new post -->
+        <section
+          class="container col-lg-10 col-xl-8 col-xxl-6 d-flex flex-column"
+        >
+          <h2 class="mt-5 mb-4">Submit your own post</h2>
+          <form id="postForm">
+            <div class="mb-3">
+              <label for="postTitle" class="form-label">Title</label>
+              <input
+                type="text"
+                class="form-control"
+                id="postTitle"
+                placeholder="Your post title"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="postBody" class="form-label">Post Body</label>
+              <textarea
+                class="form-control"
+                id="postBody"
+                rows="3"
+                placeholder="Your post text here"
+                required
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="postTags" class="form-label"
+                >Tags (comma-separated)</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="postTags"
+                placeholder="tag1, tag2, tag3"
+              />
+            </div>
+            <div class="mb-3 d-flex flex-column align-items-center">
+              <label for="postMedia" class="form-label"
+                >Media URL (optional)</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="postMedia"
+                placeholder="https://url.com/image.jpg"
+              />
+              <button type="submit" class="btn btn-primary my-3">Submit</button>
+            </div>
+            <div
+              class="container m-2 col-lg-10 col-xl-8 col-xxl-6 d-flex flex-row justify"
+            >
+              <a href="/feed/index.html" class="btn btn-secondary mx-2"
+                >Refresh</a
+              >
+              <button
+                type="submit"
+                id="logoutButton"
+                class="btn login-btn btn-primary"
+              >
+                Logout
+              </button>
+            </div>
+          </form>
+        </section>
+        <!-- form to submit a new post end -->
+        <div
+          id="searchContainer"
+          class="dropdown d-flex justify-content-center"
+        >
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li>
+              <a class="dropdown-item" href="#" id="sortLatest">Latest</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#" id="sortOldest">Oldest</a>
+            </li>
+            <li><a class="dropdown-item" href="#" id="sortAZ">a-z</a></li>
+            <li><a class="dropdown-item" href="#" id="sortZA">z-a</a></li>
+          </ul>
+        </div>
+      </section>
+      <!-- Sort btn end  -->
+      <!-- search bar -->
+      <section
+        class="container mt-3 d-flex flex-column justify-content-center text-center"
+      >
+        <h2 class="mt-5 mb-3">Search posts</h2>
+
+        <form id="searchForm" class="form-inline my-2 my-lg-0">
+          <input
+            id="searchInput"
+            class="form-control mr-sm-2 my-3"
+            type="search"
+            placeholder="Search by tag"
+            aria-label="Search"
+          />
+          <div class="d-flex flex-column my-3">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </div>
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Sort posts
+          </button>
+        </form>
+        <!-- search bar end -->
+
+        <!-- Sort posts -->
+        <div id="postsContainer" class="row justify-content-evenly mt-3"></div>
+      </section>
+      <!-- Sort end -->
+
+      <!-- Feed posts  -->
+      <section class="container mt-5 mb-3"></section>
+      <!-- Feed posts end -->
+
+      <!-- Footer  -->
+      <footer class="py-3 my-4 mt-5">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <!-- <li class="nav-item">
+            <a href="#" class="nav-link px-2">Home</a>
+          </li> -->
+          <li class="nav-item">
+            <a href="../profile/index.html" class="nav-link px-2">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2">Feed</a>
+          </li>
+        </ul>
+        <p class="text-center">© 2023 CodeSharing, Inc</p>
+      </footer>
+      <!-- Footer end -->
+    </main>
+    <!-- Enables sorting text  -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="../logout/logout.js"></script>
+    <!-- <script type="module" src="../js/fetcher.js"></script> -->
+    <script type="module" src="../posts.js"></script>
+    <script type="module" src="../common/utils/search.js"></script>
+    <script type="module" src="../common/utils/sort.js"></script>
+  </body>
+</html>

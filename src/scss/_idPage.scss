@@ -1,0 +1,24 @@
+//idPage.js
+@import "variables";
+
+#postDetailsContainer {
+  max-width: $wdth-md-sm;
+  margin: 0 auto; /* This will center the container */
+  text-align: center; /* This will center the content inside the container */
+}
+
+#feedBtns {
+  align-self: $algn-ctr;
+}
+
+.image-container {
+  text-align: $algn-ctr;
+  margin-top: $px2;
+}
+
+.post-image {
+  width: 100%; /* Adjust this value based on your design preferences */
+  max-width: 500px; /* Set a maximum width to the image container */
+  margin: 0 auto; /* Center the image horizontally */
+  display: block; /* Remove any default inline spacing */
+}

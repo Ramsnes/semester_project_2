@@ -1,0 +1,151 @@
+<!-- Home  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CodeSharing, sharing your code with the world"
+    />
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <link
+      rel="shortcut icon"
+      href="/images/favicon_io/favicon-16x16.png"
+      type="image/x-icon"
+    />
+    <title>Home | CodeSharing</title>
+  </head>
+  <body>
+    <!-- nav  -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="collapse.show navbar-collapse" id="navbarNav">
+        <!-- <ul class="navbar-nav fs-3 text">
+          <li class="nav-item">
+            <a class="nav-link current" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profile/index.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="feed/index.html">Feed</a>
+          </li>
+        </ul> -->
+      </div>
+    </nav>
+    <!-- nav end -->
+
+    <main>
+      <div class="container col-lg-10 col-xl-8 col-xxl-6 d-flex flex-column">
+        <!-- Heading  -->
+        <section class="headers">
+          <div class="text p-5 text-light d-sm-none d-xs-none">
+            <h1>CodeSharing on your mobile</h1>
+          </div>
+          <div
+            class="text p-5 text-light fs-2 text d-none d-sm-block d-lg-none"
+          >
+            <h1>CodeSharing on your tablet</h1>
+          </div>
+          <div class="text p-5 text-light fs-3 text d-none d-lg-block">
+            <h1>CodeSharing on your home computer</h1>
+          </div>
+          <p>
+            Join hundreds of others and share your code, and contribute in
+            developing each others' coding-skills!
+          </p>
+          <div class="fontPageImg my-5">
+            <img src="./images/code01-.jpeg" alt="coding screen" />
+          </div>
+          <div id="loginRules">
+            <p>* Email must containt either @noroff.no or @stud.noroff.no</p>
+            <p>
+              * Password must contain 8 characters, one big letter, and a number
+            </p>
+          </div>
+        </section>
+        <!-- Heading end -->
+
+        <!-- Login error  -->
+        <section>
+          <div id="message"></div>
+        </section>
+        <!-- Login error end  -->
+
+        <!-- Form  -->
+        <!-- Test values - Email: test_morten@noroff.no Pass: Testing123 -->
+        <section>
+          <form id="loginForm" action="/profile" method="get">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                class="form-control narrow-input"
+                id="email"
+                name="email"
+                placeholder="yourEmail@noroff.no"
+                required
+                value="morten88@stud.noroff.no"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                class="form-control narrow-input"
+                id="password"
+                name="password"
+                placeholder="Password"
+                required
+                minlength="8"
+                value="Marmea88"
+              />
+            </div>
+
+            <!-- Check if human tick box 
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="rememberMe" />
+              <label class="form-check-label" for="rememberMe"
+                >Remember me</label
+              >
+            </div> -->
+            <button
+              type="submit"
+              id="submitBtn"
+              class="btn login-btn btn-primary mt-3 mb-3"
+            >
+              Login
+            </button>
+            <p>
+              Don't have an account?
+              <a href="/register/index.html" class="text-danger"
+                >Register here</a
+              >
+            </p>
+          </form>
+        </section>
+
+        <!-- Form end -->
+      </div>
+
+      <!-- Footer  -->
+      <footer class="py-3 my-4 mt-5">
+        <!-- <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item">
+            <a href="#" class="nav-link px-2">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="feed/index.html" class="nav-link px-2">Feed</a>
+          </li>
+          <li class="nav-item">
+            <a href="profile/index.html" class="nav-link px-2">Profile</a>
+          </li>
+        </ul> -->
+        <p class="text-center">© 2023 CodeSharing, Inc</p>
+      </footer>
+      <!-- Footer end -->
+    </main>
+    <script type="module" src="./src/js/login/login.js"></script>
+  </body>
+</html>

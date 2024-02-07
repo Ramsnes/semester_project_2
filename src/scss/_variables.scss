@@ -1,0 +1,105 @@
+@import "../../node_modules/bootstrap/scss/variables";
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// Alternatives
+$auto: auto;
+
+// Pixels
+$px1: 10px;
+$px2: 20px;
+$px3: 30px;
+$px4: 40px;
+$px5: 50px;
+$px6: 60px;
+$px7: 70px;
+$px6: 80px;
+$px9: 90px;
+$px10: 100px;
+
+// positions
+$btm-0: 0;
+$ps-rltv: relative;
+
+// colors
+$gold: #ffe071;
+$gold-hvr: #9e8a42;
+$bckgrnd-drk: #363636;
+$white: #fff;
+$gray: #acacac;
+$black: #000;
+$blue-bckg: #151829;
+$pink: #eb1aa5;
+
+// fonts/text
+// font size
+$font-family: "Source Code Pro", monospace, sans-serif;
+$fnt-sz-sm: 0.7rem;
+$fnt-sz-md: 1rem;
+$fnt-sz-lg: 2rem;
+$txt-dec-und: underline;
+$fnt-wgth: 650;
+$fnt-clc: calc(1.375rem + 1vw);
+
+// nav
+// navbar
+$navbar-brand-padding-y: 0.5rem;
+$navbar-brand-padding-x: 0.5rem;
+
+// Headers
+$txt-algn-cntr: center;
+$txt-algn-str: start;
+$txt-algn-end: end;
+
+// justify/align
+$jstcont-end: end;
+$dsp-flx-flx: flex;
+$flx-drct-rw: row;
+$flx-drct-cl: column;
+$algn-ctr: center;
+
+// width/height/breakpoints
+$wdth-md-sm: 300px;
+$wdth-sm: 250px;
+$hgth-pic: 150px;
+$post-pic-sm: 50px;
+$wdth-crd-sm: 18rem;
+$wdth-1: 10%;
+$wdth-2: 20%;
+$wdth-3: 30%;
+$wdth-3px: 30px;
+$wdth-4: 40%;
+$wdth-4px: 40px;
+$wdth-5: 50%;
+$wdth-6: 60%;
+$wdth-7: 70%;
+$wdth-8: 80%;
+$wdth-9: 90%;
+$wdth-max: 100%;
+// Viewport
+$wdth-vh-1: 10vh;
+$vh-hgth-2: 20vh;
+$wdth-vh-3: 30vh;
+
+// border/radius
+$brdr-rdius-100: 100px;
+$brdr-rdius-10: 10px;
+$brdr-rdius-0: 0px;
+
+// padding / margin
+$p-0: 0;
+$m-0: 0;
+
+// scale
+$scale-9: scale(0.9);
+$scale-10: scale(1);
+
+// transition
+$trans-0-3-ease: transform 0.3s ease;

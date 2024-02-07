@@ -1,0 +1,18 @@
+@import "variables";
+
+.small-card {
+  max-width: $wdth-md-sm;
+}
+
+.col-md-6 {
+  width: $wdth-3;
+}
+
+.card {
+  transform: $scale-9;
+  transition: $trans-0-3-ease;
+}
+
+.card:hover {
+  transform: $scale-10;
+}

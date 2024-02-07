@@ -1,0 +1,79 @@
+@import "variables";
+
+.profile-pic img {
+  height: $hgth-pic;
+  border-radius: $brdr-rdius-100;
+}
+
+.card img {
+  height: $hgth-pic;
+}
+
+.card-text {
+  color: $black;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.card-body,
+.card-text {
+  color: $gold;
+  background: $black;
+}
+
+.card-body img {
+  height: $post-pic-sm;
+  border-radius: $brdr-rdius-100;
+  overflow: hidden;
+  width: $wdth-4px;
+  height: $wdth-4px;
+}
+
+.card-text {
+  color: $gold;
+}
+
+.card-text {
+  margin: $navbar-brand-padding-x;
+}
+
+.card-img-top {
+  width: $wdth-max;
+}
+
+.btn {
+  background: $black;
+  color: $gold;
+  border-color: $black;
+}
+
+.btn:hover {
+  background: $gold;
+  color: $black;
+  border-color: $black;
+}
+
+#logoutButton {
+  background: $black;
+  color: $gold;
+  border-color: $black;
+}
+
+#logoutButton:hover {
+  background: $gold;
+  color: $black;
+  border-color: $black;
+}
+
+.heart-icon path {
+  fill: $pink;
+}
+
+.username {
+  border-radius: $brdr-rdius-10;
+}

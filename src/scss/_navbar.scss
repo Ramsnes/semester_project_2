@@ -1,0 +1,31 @@
+@import "../../node_modules/bootstrap/scss/navbar";
+
+nav {
+  background: $blue-bckg;
+}
+
+.nav-link {
+  color: $white;
+}
+
+.nav-link:hover {
+  color: $gold-hvr;
+}
+
+.navbar-nav {
+  flex-direction: $flx-drct-rw;
+  padding-right: $navbar-brand-padding-x;
+}
+
+.navbar-nav li {
+  padding-right: $navbar-brand-padding-x;
+  padding-left: $navbar-brand-padding-x;
+}
+
+.navbar-brand {
+  padding-top: $navbar-brand-padding-y;
+  padding-bottom: $navbar-brand-padding-y;
+  padding-left: $navbar-brand-padding-x;
+  padding-right: $navbar-brand-padding-x;
+  color: $gold;
+}
