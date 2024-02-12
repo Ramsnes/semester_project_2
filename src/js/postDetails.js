@@ -38,6 +38,7 @@ function renderPostDetails(postDetails) {
   postContainer.prepend(postElement);
 }
 
+//
 // Delete
 const deletePostButton = document.getElementById("deletePostBtn");
 
@@ -51,7 +52,7 @@ deletePostButton.addEventListener("click", () => {
   fetcher(apiUrl, { method: "DELETE" }, true)
     .then(() => {
       // Navigating for now
-      window.location.href = "./feed/index.html";
+      window.location.href = "../feed/index.html";
     })
     .catch((error) => {
       console.error("Error fetching post details", error);
