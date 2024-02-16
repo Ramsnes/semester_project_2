@@ -36,7 +36,7 @@ async function updateAvatar(avatarUrl) {
     }
 
     // Construct API URL for updating avatar with the username
-    const apiUrl = `${BASE_API_URL}/api/v1/auction/profiles/${username}/media`;
+    const apiUrl = `${BASE_API_URL}/auction/profiles/${username}/media`;
 
     // Send PUT request to update avatar
     const response = await fetcher(apiUrl, {
@@ -46,9 +46,7 @@ async function updateAvatar(avatarUrl) {
         Authorization: `Bearer ${accessToken}`,
       },
       body: JSON.stringify({
-        avatar: {
-          url: avatarUrl,
-        },
+        avatar: "",
       }),
     });
 
