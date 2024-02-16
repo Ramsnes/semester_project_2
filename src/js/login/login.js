@@ -28,7 +28,7 @@ async function loginUser(user) {
 
     // Assuming the server returns a token on successful login
     const token = userLoginData.accessToken;
-
+    console.log(userLoginData); // Shows what the login object contains
     // Ensure that the email is from a valid domain and from @noroff
     const validEmailDomains = ["@stud.noroff.no"];
     const isValidEmail = validEmailDomains.some((domain) =>
@@ -36,7 +36,12 @@ async function loginUser(user) {
     );
 
     if (isValidEmail) {
+      // Save token to local storage
       addToLocalStorage("accessToken", token);
+      // Save username to local storage
+      const username = userLoginData.name;
+      addToLocalStorage("username", username);
+
       window.location.href = "../src/js/profile/index.html";
     } else {
       console.error("Invalid email domain");

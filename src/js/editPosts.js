@@ -55,7 +55,7 @@ document.getElementById("editPostForm").addEventListener("submit", (event) => {
     true
   )
     .then(() => {
-      const redirectUrl = `/idPage/index.html?id=${postId}`;
+      const redirectUrl = `/src/js/idPage/index.html?id=${postId}`;
       window.location.href = redirectUrl;
     })
     .catch((error) => {

@@ -1,3 +1,4 @@
+// fetcher.js
 import { getFromLocalStorage } from "./common/utils/localStorageUtil.js";
 
 // Checks if token is present

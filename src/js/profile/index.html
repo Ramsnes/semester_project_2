@@ -1,3 +1,4 @@
+<!-- profile index.html  -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,9 +37,20 @@
         <div class="user d-flex flex-column align-items-center">
           <h1 class="my-3">Profile page</h1>
           <div class="profile-pic">
-            <img src="../../../images/morten.jpeg" alt="#" />
+            <img id="avatarImage" src="#" alt="#" />
           </div>
           <p class="username py-1 px-2">@Username</p>
+
+          <!-- Avatar update -->
+          <div class="avatar-container user d-flex flex-row align-items-center">
+            <input
+              type="text"
+              id="avatarInput"
+              placeholder="Enter Avatar URL"
+              value="https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcSdUCZfVLGq6YliwIN9nh9lGJKy49hDb6ZbwOXx-AJnhDkyGyXlDRctOAT_h74ciuRj"
+            />
+            <button id="uploadAvatarBtn">Update Avatar</button>
+          </div>
 
           <!-- Buttons  -->
           <div class="buttons">
@@ -57,7 +69,7 @@
 
       <!-- posts  -->
       <section class="container col-lg-10 col-xl-8 col-xxl-6">
-        <p>These posts are hardcoded and not to consideration in CA</p>
+        <p>Placeholder text</p>
         <div class="card m-3">
           <img
             src="../../../images/code01-.jpeg"
@@ -143,5 +155,6 @@
       <!-- Footer end -->
     </main>
     <script type="module" src="../logout/logout.js"></script>
+    <script type="module" src="./avatar.js"></script>
   </body>
 </html>
