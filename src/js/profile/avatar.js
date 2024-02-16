@@ -25,12 +25,18 @@ document.addEventListener("DOMContentLoaded", () => {
 // Function that retrieves accessToken and userName, sends PUT request with fetcher
 async function updateAvatar(avatarUrl) {
   try {
-    // Retrieve access token and current profile name
+    // Retrieve access token and username from local storage
     const accessToken = getFromLocalStorage("accessToken");
-    const currentProfileName = getCurrentUserProfileName();
+    const username = getFromLocalStorage("username");
 
-    // Construct API URL for updating avatar
-    const apiUrl = `${BASE_API_URL}/auction/profiles/${currentProfileName}`;
+    // Check if username is null or undefined
+    if (!username) {
+      console.error("Username is not available in local storage");
+      return;
+    }
+
+    // Construct API URL for updating avatar with the username
+    const apiUrl = `${BASE_API_URL}/api/v1/auction/profiles/${username}/media`;
 
     // Send PUT request to update avatar
     const response = await fetcher(apiUrl, {
@@ -60,12 +66,4 @@ async function updateAvatar(avatarUrl) {
     // Display error message to user
     alert("Failed to update avatar. Please try again later.");
   }
-}
-
-// fn to obtain the current user's profile name
-function getCurrentUserProfileName() {
-  // You need to implement this function based on how you track the current user's profile name
-  // This could involve accessing it from local storage, session storage, or from a global variable
-  // For example, if the profile name is stored in local storage under the key "currentProfileName":
-  return getFromLocalStorage("currentProfileName");
 }
