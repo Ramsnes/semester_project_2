@@ -1,3 +1,5 @@
+// avatar.js
+
 import { fetcher } from "../fetcher.js";
 import { BASE_API_URL } from "../common/constants.js";
 import { getFromLocalStorage } from "../common/utils/localStorageUtil.js";
@@ -37,18 +39,23 @@ async function updateAvatar(avatarUrl) {
 
     // Construct API URL for updating avatar with the username
     const apiUrl = `${BASE_API_URL}/auction/profiles/${username}/media`;
+    // const apiUrl = `${BASE_API_URL}/social/profiles/${username}/media`;
 
     // Send PUT request to update avatar
-    const response = await fetcher(apiUrl, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${accessToken}`,
+    const response = await fetcher(
+      apiUrl,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify({
+          avatar: "",
+        }),
       },
-      body: JSON.stringify({
-        avatar: "",
-      }),
-    });
+      true
+    );
 
     // Check if request was successful
     if (response.status !== 200) {

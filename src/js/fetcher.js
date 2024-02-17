@@ -2,7 +2,7 @@
 import { getFromLocalStorage } from "./common/utils/localStorageUtil.js";
 
 // Checks if token is present
-const accessToken = getFromLocalStorage("accessToken");
+// const accessToken = getFromLocalStorage("accessToken");
 
 export async function fetcher(
   url,
