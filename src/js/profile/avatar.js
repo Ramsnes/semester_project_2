@@ -2,7 +2,10 @@
 
 import { fetcher } from "../fetcher.js";
 import { BASE_API_URL } from "../common/constants.js";
-import { getFromLocalStorage } from "../common/utils/localStorageUtil.js";
+import {
+  getFromLocalStorage,
+  addToLocalStorage,
+} from "../common/utils/localStorageUtil.js";
 
 //
 // Event listener for the "Update Avatar" button click
@@ -59,6 +62,9 @@ async function updateAvatar(avatarUrl) {
     // Update avatar image on the frontend
     const avatarImage = document.getElementById("avatarImage");
     avatarImage.src = response.avatar;
+
+    // Update and store avatar URL in local storage
+    addToLocalStorage("avatarUrl", response.avatar);
     console.log("Avatar updated successfully.");
   } catch (error) {
     console.error("Error updating avatar:", error.message);
