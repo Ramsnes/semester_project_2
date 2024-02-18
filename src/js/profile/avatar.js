@@ -50,8 +50,7 @@ async function updateAvatar(avatarUrl) {
           Authorization: `Bearer ${accessToken}`,
         },
         body: JSON.stringify({
-          avatar:
-            "https://akamai.vgc.no/users/schibsted/images/101574301.jpg?t[strip]=1&t[crop][x]=0&t[crop][y]=0&t[crop][width]=3114&t[crop][height]=2176&t[resize][width]=1350&accessToken=a66734f2002c3b811060ad25c93992c1fa10c23d43113dcb1e93eb7d3decc5de",
+          avatar: avatarUrl,
         }),
       },
       true
