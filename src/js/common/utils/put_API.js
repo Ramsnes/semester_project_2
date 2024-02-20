@@ -3,6 +3,7 @@ import { fetcher } from "../../fetcher.js";
 import { BASE_API_URL } from "../constants.js";
 
 export async function updatePost(postId, postData) {
+  // Update /social to /auction
   const apiUrl = `${BASE_API_URL}/social/posts/${postId}`;
 
   try {
