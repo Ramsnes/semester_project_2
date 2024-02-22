@@ -1,4 +1,4 @@
-<!-- feed index.html  -->
+<!-- feed(listings) index.html  -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,7 +28,7 @@
             <a class="nav-link" href="../profile/index.html">Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link current" href="../feed/index.html">Feed</a>
+            <a class="nav-link current" href="../feed/index.html">Listings</a>
           </li>
         </ul>
       </div>
@@ -38,13 +38,14 @@
     <main>
       <!-- Sort btn  -->
       <section>
-        <h1 class="my-4">Feed page</h1>
+        <h1 class="my-4">Listings</h1>
+        <h2 class="mt-5" id="totalCredit">Current credit</h2>
 
         <!-- Form to submit a new post -->
         <section
           class="container col-lg-10 col-xl-8 col-xxl-6 d-flex flex-column"
         >
-          <h2 class="mt-5 mb-4">Submit your own post</h2>
+          <h2 class="mt-5 mb-4">Submit your own listing</h2>
           <form id="postForm">
             <div class="mb-3">
               <label for="postTitle" class="form-label">Title</label>
@@ -57,7 +58,7 @@
               />
             </div>
             <div class="mb-3">
-              <label for="postBody" class="form-label">Post Body</label>
+              <label for="postBody" class="form-label">Deadline date</label>
               <textarea
                 class="form-control"
                 id="postBody"
@@ -78,9 +79,7 @@
               />
             </div>
             <div class="mb-3 d-flex flex-column align-items-center">
-              <label for="postMedia" class="form-label"
-                >Media URL (optional)</label
-              >
+              <label for="postMedia" class="form-label">Media gallery</label>
               <input
                 type="text"
                 class="form-control"
@@ -173,7 +172,7 @@
             <a href="../profile/index.html" class="nav-link px-2">Profile</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link px-2">Feed</a>
+            <a href="#" class="nav-link px-2">Listings</a>
           </li>
         </ul>
         <p class="text-center">© 2023 CodeSharing, Inc</p>
@@ -187,9 +186,9 @@
       crossorigin="anonymous"
     ></script>
     <script type="module" src="../logout/logout.js"></script>
-    <!-- <script type="module" src="../js/fetcher.js"></script> -->
     <script type="module" src="../posts.js"></script>
     <script type="module" src="../common/utils/search.js"></script>
     <script type="module" src="../common/utils/sort.js"></script>
+    <script type="module" src="../credits.js"></script>
   </body>
 </html>
