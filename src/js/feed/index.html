@@ -47,7 +47,7 @@
         >
           <h2 class="mt-5 mb-4">Submit your own listing</h2>
           <form id="postForm">
-            <div class="mb-3">
+            <div class="mb-3 d-flex flex-column align-items-center">
               <label for="postTitle" class="form-label">Title</label>
               <input
                 type="text"
@@ -57,13 +57,13 @@
                 required
               />
             </div>
-            <div class="mb-3">
-              <label for="postBody" class="form-label">Deadline date</label>
+            <div class="mb-3 d-flex flex-column align-items-center">
+              <label for="postBody" class="form-label">Description</label>
               <textarea
                 class="form-control"
                 id="postBody"
                 rows="3"
-                placeholder="Your post text here"
+                placeholder="Your description of listing here"
                 required
               ></textarea>
             </div>
@@ -86,12 +86,24 @@
                 id="postMedia"
                 placeholder="https://url.com/image.jpg"
               />
+            </div>
+            <div class="mb-3 d-flex flex-column align-items-center">
+              <label for="postDeadline" class="form-label">Deadline</label>
+              <textarea
+                class="form-control"
+                id="postEndsAt"
+                rows="1"
+                placeholder="Deadline"
+                required
+              ></textarea>
+            </div>
+            <div>
               <button type="submit" class="btn btn-primary my-3">Submit</button>
             </div>
             <div
               class="container m-2 col-lg-10 col-xl-8 col-xxl-6 d-flex flex-row justify"
             >
-              <a href="/feed/index.html" class="btn btn-secondary mx-2"
+              <a href="../feed/index.html" class="btn btn-secondary mx-2"
                 >Refresh</a
               >
               <button

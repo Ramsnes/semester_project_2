@@ -4,14 +4,17 @@ import { POSTS_API_URL } from "./common/constants.js";
 import { displaySearchResults } from "./common/utils/search.js";
 
 const postForm = document.getElementById("postForm");
-const urlFeed = "https://api.noroff.dev/api/v1/social/posts";
+// Bytta endpoint url
+const urlFeed = "https://api.noroff.dev/api/v1/auction/listings"; // Bytta url til /auction
 
+// Søkefunksjon som må endres senere til /auction API
 document.addEventListener("DOMContentLoaded", async () => {
   const posts = await fetcher(POSTS_API_URL, { method: "GET" }, true);
 
   displaySearchResults(posts);
 });
 
+// Poster listing
 postForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -19,14 +22,16 @@ postForm.addEventListener("submit", async (event) => {
   const postBody = document.getElementById("postBody").value;
   const postMedia = document.getElementById("postMedia").value;
   const tags = document.getElementById("postTags").value;
+  const endsAt = document.getElementById("postEndsAt").value; // La til deadline
 
   const postData = {
     title: postTitle,
-    body: postBody,
-    media: postMedia,
+    description: postBody, // Bytta 'body' med 'description'
+    media: [postMedia], // Bytta til array[] - Note from API doc: Please note that listings media property must be an array of fully formed URLs that links to live images
     created: new Date().toISOString(),
     updated: new Date().toISOString(),
     tags: tags.split(","), // Splits the tags strong into an array
+    endsAt: new Date(endsAt).toISOString(), // La til deadline
   };
 
   try {
@@ -64,11 +69,13 @@ function renderPost(post) {
   ); // Adds created attribute from sort.js
 
   // Add post content
+  // La til [0] på media siden det nå er array
+  // La til '.description' i stedet for '.body'
   postElement.innerHTML = `
-    <img src="${post.media}" class="card-img-top" alt="..." />
+    <img src="${post.media[0]}" class="card-img-top" alt="..." />
     <div class="card-body">
       <h5 class="card-title">${post.title}</h5>
-      <p class="card-text">${post.body}</p>
+      <p class="card-text">${post.description}</p>
       <img src="${post.media || ""}" />
     </div>
   `;
