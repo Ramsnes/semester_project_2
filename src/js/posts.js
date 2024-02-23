@@ -8,11 +8,11 @@ const postForm = document.getElementById("postForm");
 const urlFeed = "https://api.noroff.dev/api/v1/auction/listings"; // Bytta url til /auction
 
 // Søkefunksjon som må endres senere til /auction API
-document.addEventListener("DOMContentLoaded", async () => {
-  const posts = await fetcher(POSTS_API_URL, { method: "GET" }, true);
+// document.addEventListener("DOMContentLoaded", async () => {
+//   const posts = await fetcher(POSTS_API_URL, { method: "GET" }, true);
 
-  displaySearchResults(posts);
-});
+//   displaySearchResults(posts);
+// });
 
 // Poster listing
 postForm.addEventListener("submit", async (event) => {
@@ -24,14 +24,17 @@ postForm.addEventListener("submit", async (event) => {
   const tags = document.getElementById("postTags").value;
   const endsAt = document.getElementById("postEndsAt").value; // La til deadline
 
+  const date = new Date("2020-01-01T00:00:00.000Z");
+  date.setDate(date.getDate() + 1); // Add one day
+  const isoString = date.toISOString();
+  console.log(isoString);
+
   const postData = {
     title: postTitle,
-    description: postBody, // Bytta 'body' med 'description'
-    media: [postMedia], // Bytta til array[] - Note from API doc: Please note that listings media property must be an array of fully formed URLs that links to live images
-    created: new Date().toISOString(),
-    updated: new Date().toISOString(),
-    tags: tags.split(","), // Splits the tags strong into an array
-    endsAt: new Date(endsAt).toISOString(), // La til deadline
+    // description: postBody, // Bytta 'body' med 'description'
+    // media: [postMedia], // Bytta til array[] - Note from API doc: Please note that listings media property must be an array of fully formed URLs that links to live images
+    // tags: tags.split(","), // Splits the tags strong into an array
+    endsAt: isoString, // La til deadline
   };
 
   try {
@@ -44,10 +47,6 @@ postForm.addEventListener("submit", async (event) => {
       true
     );
 
-    if (response?.errors?.length > 0) {
-      return alert(response?.errors?.[0]?.message || "Something went wrong!");
-    }
-
     // Render of new post on the page
     renderPost(response);
   } catch (error) {
@@ -55,8 +54,7 @@ postForm.addEventListener("submit", async (event) => {
   }
 });
 
-// Rendering posts
-
+// Rendering listing
 function renderPost(post) {
   const postsContainer = document.getElementById("postsContainer");
 
