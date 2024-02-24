@@ -22,18 +22,17 @@ postForm.addEventListener("submit", async (event) => {
   const postBody = document.getElementById("postBody").value;
   const postMedia = document.getElementById("postMedia").value;
   const tags = document.getElementById("postTags").value;
-  const endsAt = document.getElementById("postEndsAt").value; // La til deadline
+  const endsAt = document.getElementById("postEndsAt").value;
 
-  const date = new Date("2020-01-01T00:00:00.000Z");
+  const date = new Date();
   date.setDate(date.getDate() + 1); // Add one day
   const isoString = date.toISOString();
-  console.log(isoString);
 
   const postData = {
     title: postTitle,
-    // description: postBody, // Bytta 'body' med 'description'
-    // media: [postMedia], // Bytta til array[] - Note from API doc: Please note that listings media property must be an array of fully formed URLs that links to live images
-    // tags: tags.split(","), // Splits the tags strong into an array
+    description: postBody, // Bytta 'body' med 'description'
+    media: [postMedia], // media must be array (api doc)
+    tags: tags.split(","), // Splits the tags strong into an array
     endsAt: isoString, // La til deadline
   };
 

@@ -19,7 +19,7 @@ document
 // Function to perform a search for posts
 async function searchPosts(search) {
   // tag search
-  const apiUrl = `${BASE_API_URL}/social/posts?_tag=${search}`;
+  const apiUrl = `${BASE_API_URL}/auction/listings?_tag=${search}`;
 
   try {
     // Makes the API call and return the search results
