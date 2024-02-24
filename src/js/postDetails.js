@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const postId = new URLSearchParams(window.location.search).get("id");
 
   // Fetch post details
-  const apiUrl = `${BASE_API_URL}/social/posts/${postId}`;
+  const apiUrl = `${BASE_API_URL}/auction/listings/${postId}`;
 
   fetcher(apiUrl, { method: "GET" }, true)
     .then((postDetails) => {
@@ -25,12 +25,12 @@ function renderPostDetails(postDetails) {
   // Create HTML elements for the post details
   const postElement = document.getElementById("postDetails");
 
-  // Add post content (modify this based on your post structure)
+  // Auction content
   postElement.innerHTML = `
     <h1 id="dynamicPostTitle" class="mt-5 mb-4">${postDetails.title}</h1>
-    <p id="dynamicPostBody">${postDetails.body}</p>
+    <p id="dynamicPostBody">${postDetails.description}</p>
     <div class="image-container">
-      <img class="post-image" src="${postDetails.media}"/>
+      <img class="post-image" src="${postDetails.media[0]}"/>
     </div>
     <a href="edit-post.html?id=${postDetails.id}" class="btn btn-primary">Navigate to Edit Post</a>`;
 
@@ -47,7 +47,7 @@ deletePostButton.addEventListener("click", () => {
   const postId = new URLSearchParams(window.location.search).get("id");
 
   // Fetch post details
-  const apiUrl = `${BASE_API_URL}/social/posts/${postId}`;
+  const apiUrl = `${BASE_API_URL}/auction/listings/${postId}`;
 
   fetcher(apiUrl, { method: "DELETE" }, true)
     .then(() => {
