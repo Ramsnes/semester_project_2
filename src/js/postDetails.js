@@ -56,18 +56,24 @@ function renderPostDetails(postDetails) {
 async function submitBid(postId, bidAmount) {
   const apiUrl = `${BASE_API_URL}/auction/listings/${postId}/bids`;
 
+  // For å være sikker bidAmount er et nummer, så bruk denne variabel i fetcher
+  const bodyObject = {
+    amount: parseInt(bidAmount),
+  };
+
   try {
     const response = await fetcher(
       apiUrl,
       {
         method: "POST",
-        body: JSON.stringify({ amount: bidAmount }),
+        body: JSON.stringify(bodyObject),
       },
       true
     );
 
     // Navigation and alert msg
-    window.location.href = "../feed/index.html";
+    // Kommentert ut for at det ikke refresher med èn gang
+    // window.location.href = "../feed/index.html";
     alert("Bid successful!");
 
     // Bid success msg
