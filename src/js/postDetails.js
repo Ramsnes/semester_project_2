@@ -13,6 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((postDetails) => {
       document.title = `Post - ${postDetails.title}`;
       renderPostDetails(postDetails);
+
+      // Submit btn -
+      const submitBidButton = document.getElementById("submitBidBtn");
+      submitBidButton.addEventListener("click", () => {
+        const bidAmount = document.getElementById("bidAmount").value;
+        submitBid(postId, bidAmount);
+      });
     })
     .catch((error) => {
       console.error("Error fetching post details", error);
@@ -25,7 +32,7 @@ function renderPostDetails(postDetails) {
   // Create HTML elements for the post details
   const postElement = document.getElementById("postDetails");
 
-  // Auction content
+  // Auction id content
   postElement.innerHTML = `
     <h1 id="dynamicPostTitle" class="mt-5 mb-4">${postDetails.title}</h1>
     <p id="dynamicPostBody">${postDetails.description}</p>
@@ -33,6 +40,11 @@ function renderPostDetails(postDetails) {
       <img class="post-image" src="${postDetails.media[0]}"/>
       </div>
       <p id="postEndsAt">Deadline: ${postDetails.endsAt}</p>
+      <div>
+            <label for="bidAmount">Enter bid amount</label>
+            <input type="number" id="bidAmount" required />
+            <button id="submitBidBtn">Submit bid</button>
+      </div>
     <a href="edit-post.html?id=${postDetails.id}" class="btn btn-primary">Navigate to Edit Post</a>
     `;
 
@@ -40,8 +52,36 @@ function renderPostDetails(postDetails) {
   postContainer.prepend(postElement);
 }
 
+// Bid function
+async function submitBid(postId, bidAmount) {
+  const apiUrl = `${BASE_API_URL}/auction/listings/${postId}/bids`;
+
+  try {
+    const response = await fetcher(
+      apiUrl,
+      {
+        method: "POST",
+        body: JSON.stringify({ amount: bidAmount }),
+      },
+      true
+    );
+
+    // Navigation and alert msg
+    window.location.href = "../feed/index.html";
+    alert("Bid successful!");
+
+    // Bid success msg
+    console.log("Bid placed successfully:", response);
+
+    // Maybe display success msg
+  } catch (error) {
+    console.error("Error placing bid:", error);
+    // Error msg also
+  }
+}
+
 //
-// Delete
+// Delete listing
 const deletePostButton = document.getElementById("deletePostBtn");
 
 deletePostButton.addEventListener("click", () => {
