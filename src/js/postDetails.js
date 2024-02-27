@@ -31,8 +31,10 @@ function renderPostDetails(postDetails) {
     <p id="dynamicPostBody">${postDetails.description}</p>
     <div class="image-container">
       <img class="post-image" src="${postDetails.media[0]}"/>
-    </div>
-    <a href="edit-post.html?id=${postDetails.id}" class="btn btn-primary">Navigate to Edit Post</a>`;
+      </div>
+      <p id="postEndsAt">Deadline: ${postDetails.endsAt}</p>
+    <a href="edit-post.html?id=${postDetails.id}" class="btn btn-primary">Navigate to Edit Post</a>
+    `;
 
   // Prepend the post details to the post container
   postContainer.prepend(postElement);
