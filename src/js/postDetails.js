@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fetcher(apiUrl, { method: "GET" }, true)
     .then((postDetails) => {
-      document.title = `Post - ${postDetails.title}`;
+      document.title = `Listing - ${postDetails.title}`;
       renderPostDetails(postDetails);
 
       // Submit btn -
@@ -32,7 +32,7 @@ function renderPostDetails(postDetails) {
   // Create HTML elements for the post details
   const postElement = document.getElementById("postDetails");
 
-  // Auction id content
+  // Auction id content rendered
   postElement.innerHTML = `
     <h1 id="dynamicPostTitle" class="mt-5 mb-4">${postDetails.title}</h1>
     <p id="dynamicPostBody">${postDetails.description}</p>
@@ -52,6 +52,7 @@ function renderPostDetails(postDetails) {
   postContainer.prepend(postElement);
 }
 
+//
 // Bid function
 async function submitBid(postId, bidAmount) {
   const apiUrl = `${BASE_API_URL}/auction/listings/${postId}/bids`;
