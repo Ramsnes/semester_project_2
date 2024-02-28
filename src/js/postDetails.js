@@ -1,6 +1,7 @@
 // postDetails.js
 import { fetcher } from "./fetcher.js";
 import { BASE_API_URL } from "./common/constants.js";
+import { fetchBidsForListing } from "./bidsfetched.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Get post ID from the URL
@@ -45,6 +46,7 @@ function renderPostDetails(postDetails) {
             <input type="number" id="bidAmount" required />
             <button id="submitBidBtn">Submit bid</button>
       </div>
+      <div id="bidsContainer"></div>
     <a href="edit-post.html?id=${postDetails.id}" class="btn btn-primary">Navigate to Edit Post</a>
     `;
 
