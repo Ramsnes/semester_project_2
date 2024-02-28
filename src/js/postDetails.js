@@ -1,7 +1,7 @@
 // postDetails.js
 import { fetcher } from "./fetcher.js";
 import { BASE_API_URL } from "./common/constants.js";
-import { fetchBidsForListing } from "./bidsfetched.js";
+import { fetchBidsForListing } from "./bidFetch.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Get post ID from the URL
