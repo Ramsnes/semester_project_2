@@ -1,7 +1,7 @@
 // postDetails.js
 import { fetcher } from "./fetcher.js";
 import { BASE_API_URL } from "./common/constants.js";
-import { fetchBidsForListing } from "./bidFetch.js";
+import { fetchBidsForListing } from "./bidsFetch.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Get post ID from the URL
@@ -77,7 +77,7 @@ async function submitBid(postId, bidAmount) {
     // Navigation and alert msg
     // Kommentert ut for at det ikke refresher med èn gang
     // window.location.href = "../feed/index.html";
-    alert("Bid successful!");
+    alert("Bid placed, unless already ended!");
 
     // Bid success msg
     console.log("Bid placed successfully:", response);

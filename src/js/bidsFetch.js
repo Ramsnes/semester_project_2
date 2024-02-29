@@ -1,4 +1,4 @@
-// bidsDisplayed.js
+// bidsFetch.js
 
 import { fetcher } from "./fetcher.js";
 import { BASE_API_URL } from "./common/constants.js";
@@ -14,3 +14,12 @@ export async function fetchBidsForListing(listingId) {
     throw error;
   }
 }
+
+const bidResponse = await fetchBidsForListing(EN_LISTING_ID);
+const itemList = document.getElementById("item-list");
+
+bidResponse.bids.forEach((bid) => {
+  const li = document.createElement("li");
+  li.textContent = bid.amount; // Assuming each bid has an 'amount' property
+  itemList.appendChild(li);
+});
