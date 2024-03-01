@@ -1,7 +1,7 @@
 // postDetails.js
 import { fetcher } from "./fetcher.js";
 import { BASE_API_URL } from "./common/constants.js";
-import { fetchBidsForListing } from "./bidsFetch.js";
+// import { fetchBidsForListing } from "./bidsFetch.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Get post ID from the URL
@@ -109,3 +109,48 @@ deletePostButton.addEventListener("click", () => {
       console.error("Error fetching post details", error);
     });
 });
+
+//
+// Bids fetched and rendered
+// postDetails.js
+
+import { fetchBidsForListing } from "./bidsFetch.js";
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const postId = new URLSearchParams(window.location.search).get("id");
+
+  // Fetch post details
+  const apiUrl = `${BASE_API_URL}/auction/listings/${postId}`;
+
+  try {
+    const postDetails = await fetcher(apiUrl, { method: "GET" }, true);
+    document.title = `Listing - ${postDetails.title}`;
+    renderPostDetails(postDetails);
+
+    // Fetch bids for the listing
+    const bidResponse = await fetchBidsForListing(postId);
+
+    // Render bids
+    renderBids(bidResponse.bids);
+  } catch (error) {
+    console.error("Error fetching post details", error);
+  }
+});
+
+// Function to render bids
+function renderBids(bids) {
+  const bidsContainer = document.getElementById("bidsContainer");
+
+  // Clear previous bids
+  bidsContainer.innerHTML = "";
+
+  // Render each bid
+  bids.forEach((bid) => {
+    const bidElement = document.createElement("div");
+    bidElement.innerHTML = `
+      <p>Bid Amount: ${bid.amount}</p>
+      <p>Bidder Name: ${bid.bidder.name}</p>
+    `;
+    bidsContainer.appendChild(bidElement);
+  });
+}
