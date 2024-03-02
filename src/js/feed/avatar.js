@@ -13,6 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const avatarInput = document.getElementById("avatarInput");
   const uploadAvatarBtn = document.getElementById("uploadAvatarBtn");
 
+  // Set the correct avatar url to the image
+  const avatar = getFromLocalStorage("avatarUrl");
+  const avatarImage = document.getElementById("avatarImage");
+  avatarImage.src = avatar;
+
   uploadAvatarBtn.addEventListener("click", () => {
     const avatarUrl = avatarInput.value.trim();
 
@@ -63,9 +68,15 @@ async function updateAvatar(avatarUrl) {
     const avatarImage = document.getElementById("avatarImage");
     avatarImage.src = response.avatar;
 
+    // Remove the avatar input value
+    const avatarInput = document.getElementById("avatarInput");
+    avatarInput.value = "";
+
     // Update and store avatar URL in local storage
     addToLocalStorage("avatarUrl", response.avatar);
     console.log("Avatar updated successfully.");
+
+    return response;
   } catch (error) {
     console.error("Error updating avatar:", error.message);
     // Display error message to user

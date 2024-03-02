@@ -5,11 +5,17 @@ import { BASE_API_URL } from "../common/constants.js";
 // Function to fetch listings without login required
 export async function fetchUnregListings() {
   const url = `${BASE_API_URL}/auction/listings`;
+
   try {
     const response = await fetcher(url, { method: "GET" });
 
+    if (!response || response.length === 0) {
+      console.error("No listings found.");
+      return;
+    }
+
     // // Renders latest 9 listings
-    const latestListings = response.data.slice(0, 9); // Fjernes denne og bytt ut 'latestListings.forEach' med 'response.forEach' så renderes 6 poster
+    const latestListings = response.slice(0, 9); // Fjernes denne og bytt ut 'latestListings.forEach' med 'response.forEach' så renderes 6 poster
 
     // Renders each listing
     latestListings.forEach((listing) => {
@@ -29,7 +35,7 @@ function renderListing(listing) {
 
   // Listing info rendered
   listingElement.innerHTML = `
-        <img src="${listing.media[0].url}" class="card-img-top" alt="${listing.media[0].alt}" />
+        <img src="${listing?.media?.[0]}" class="card-img-top" alt="${listing.media[0].alt}" />
         <div class="card-body">
         <h5 class="card-title">${listing.title}</h5>
         <p class="card-text">${listing.description}</p>

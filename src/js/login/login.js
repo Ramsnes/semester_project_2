@@ -42,6 +42,7 @@ async function loginUser(user) {
       // Save username to local storage
       const username = userLoginData.name;
       addToLocalStorage("username", username);
+      addToLocalStorage("avatarUrl", userLoginData?.avatar);
 
       window.location.href = "../src/js/feed/index.html";
     } else {
