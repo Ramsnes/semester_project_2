@@ -3,28 +3,58 @@ import { fetcher } from "./fetcher.js";
 import { BASE_API_URL } from "./common/constants.js";
 // import { fetchBidsForListing } from "./bidsFetch.js";
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   // Get post ID from the URL
   const postId = new URLSearchParams(window.location.search).get("id");
 
   // Fetch post details
-  const apiUrl = `${BASE_API_URL}/auction/listings/${postId}`;
+  const listingUrl = `${BASE_API_URL}/auction/listings/${postId}`;
+  let postDetails;
 
-  fetcher(apiUrl, { method: "GET" }, true)
-    .then((postDetails) => {
-      document.title = `Listing - ${postDetails.title}`;
-      renderPostDetails(postDetails);
+  try {
+    postDetails = await fetcher(listingUrl, { method: "GET" }, true);
+    document.title = `Listing - ${postDetails.title}`;
+    renderPostDetails(postDetails);
 
-      // Submit btn -
-      const submitBidButton = document.getElementById("submitBidBtn");
-      submitBidButton.addEventListener("click", () => {
-        const bidAmount = document.getElementById("bidAmount").value;
-        submitBid(postId, bidAmount);
-      });
-    })
-    .catch((error) => {
-      console.error("Error fetching post details", error);
+    // Submit btn -
+    const submitBidButton = document.getElementById("submitBidBtn");
+    submitBidButton.addEventListener("click", () => {
+      const bidAmount = document.getElementById("bidAmount").value;
+      submitBid(postId, bidAmount);
     });
+  } catch (error) {
+    console.error("Error fetching post details", error);
+  }
+
+  if (!postDetails) {
+    return;
+  }
+
+  // Fetch bids for the listing
+  const bidsUrl = `${BASE_API_URL}/auction/listings/${postId}?_bids=true`;
+  try {
+    const bidResponse = await fetcher(bidsUrl, { method: "GET" }, true);
+
+    if (!bidResponse && bidResponse.bids.length === 0) {
+      console.error("No bids found for the listing");
+      return;
+    }
+
+    const container = document.getElementById("bids-container");
+
+    bidResponse.bids.forEach((bid) => {
+      const bidElement = document.createElement("div");
+      bidElement.classList.add("bid-container");
+
+      bidElement.innerHTML = `
+        <p>Bid Amount: ${bid.amount}</p>
+        <p>Bidder Name: ${bid.bidderName}</p>
+      `;
+      container.appendChild(bidElement);
+    });
+  } catch (error) {
+    console.error("Error fetching bids for the listing", error);
+  }
 });
 
 function renderPostDetails(postDetails) {
