@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const postId = new URLSearchParams(window.location.search).get("id");
 
   // Fetche post details
-  const apiUrl = `${BASE_API_URL}/social/posts/${postId}`;
+  const apiUrl = `${BASE_API_URL}/auction/listings/${postId}`;
 
   fetcher(apiUrl, { method: "GET" }, true)
     .then((postDetails) => {
@@ -41,7 +41,7 @@ document.getElementById("editPostForm").addEventListener("submit", (event) => {
   const postId = new URLSearchParams(window.location.search).get("id");
 
   // PUT url with id
-  const apiUrl = `${BASE_API_URL}/social/posts/${postId}`;
+  const apiUrl = `${BASE_API_URL}/auction/listings/${postId}`;
 
   fetcher(
     apiUrl,
