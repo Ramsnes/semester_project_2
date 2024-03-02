@@ -7,13 +7,6 @@ const postForm = document.getElementById("postForm");
 // Bytta endpoint url
 const urlFeed = "https://api.noroff.dev/api/v1/auction/listings"; // Bytta url til /auction
 
-// Søkefunksjon som må endres senere til /auction API
-// document.addEventListener("DOMContentLoaded", async () => {
-//   const posts = await fetcher(POSTS_API_URL, { method: "GET" }, true);
-
-//   displaySearchResults(posts);
-// });
-
 // Poster listing
 postForm.addEventListener("submit", async (event) => {
   event.preventDefault();

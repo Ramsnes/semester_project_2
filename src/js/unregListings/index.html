@@ -21,23 +21,18 @@
           <li class="nav-item">
             <a class="nav-link" href="../../../index.html">Home</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="../profile/index.html">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link current" href="../feed/index.html">Listings</a>
-          </li> -->
         </ul>
       </div>
     </nav>
     <!-- nav end -->
 
     <main>
-      <!-- Sort btn  -->
       <section>
-        <h1 class="my-4">Listings</h1>
-
-        <!-- form to submit a new post end -->
+        <h1 class="my-4">Latest auction listings</h1>
+        <div
+          id="listingsContainer"
+          class="row justify-content-evenly mt-3"
+        ></div>
         <div
           id="searchContainer"
           class="dropdown d-flex justify-content-center"
@@ -54,12 +49,10 @@
           </ul>
         </div>
       </section>
-      <!-- Sort btn end  -->
-      <!-- search bar -->
       <section
         class="container mt-3 d-flex flex-column justify-content-center text-center"
       >
-        <h2 class="mt-5 mb-3">Search posts</h2>
+        <h2 class="mt-5 mb-3">Search listings</h2>
 
         <form id="searchForm" class="form-inline my-2 my-lg-0">
           <input
@@ -86,17 +79,10 @@
         </form>
         <!-- search bar end -->
 
-        <!-- Sort posts -->
-        <div
-          id="listingsContainer"
-          class="row justify-content-evenly mt-3"
-        ></div>
-      </section>
-      <!-- Sort end -->
+        <!-- Container for unregListings         -->
 
-      <!-- Feed posts  -->
-      <section class="container mt-5 mb-3"></section>
-      <!-- Feed posts end -->
+        <div id="postsContainer" class="row justify-content-evenly mt-3"></div>
+      </section>
 
       <!-- Footer  -->
       <footer class="py-3 my-4 mt-5">
@@ -115,16 +101,18 @@
       </footer>
       <!-- Footer end -->
     </main>
-    <!-- Enables sorting text  -->
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="../logout/logout.js"></script>
-    <script type="module" src="../posts.js"></script>
+    <!-- <script type="module" src="../logout/logout.js"></script> -->
     <script type="module" src="../common/utils/search.js"></script>
+    <script type="module" src="../fetcher.js"></script>
     <script type="module" src="../common/utils/sort.js"></script>
-    <script type="module" src="../credits.js"></script>
+    <script type="module" src="../common/constants.js"></script>
+    <script type="module" src="./latestListings.js"></script>
+    <script type="module" src="./latestListingsCall.js"></script>
   </body>
 </html>

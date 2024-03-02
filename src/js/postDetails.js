@@ -141,7 +141,6 @@ deletePostButton.addEventListener("click", () => {
 
 //
 // Bids fetched and rendered
-// postDetails.js
 
 import { fetchBidsForListing } from "./bidsFetch.js";
 
