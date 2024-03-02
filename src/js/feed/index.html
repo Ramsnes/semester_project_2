@@ -11,7 +11,7 @@
       href="/images/favicon_io/favicon-16x16.png"
       type="image/x-icon"
     />
-    <title>Feed | Auctoineering</title>
+    <title>Auctions | Auctoineering</title>
   </head>
   <body>
     <!-- nav  -->
@@ -22,10 +22,10 @@
             <a class="nav-link" href="../index.html">Home</a>
           </li> -->
           <li class="nav-item">
-            <a class="nav-link" href="../profile/index.html">Profile</a>
+            <!-- <a class="nav-link" href="../profile/index.html">Profile</a> -->
           </li>
           <li class="nav-item">
-            <a class="nav-link current" href="../feed/index.html">Listings</a>
+            <a class="nav-link current" href="../feed/index.html">Auctions</a>
           </li>
         </ul>
       </div>
@@ -35,6 +35,28 @@
     <main>
       <!-- Sort btn  -->
       <section>
+        <div class="user d-flex flex-column align-items-center">
+          <h1 class="my-3">Profile page</h1>
+          <div class="profile-pic">
+            <img
+              id="avatarImage"
+              src="https://cdn-icons-png.freepik.com/512/5580/5580993.png"
+              alt="#"
+            />
+          </div>
+          <p class="username py-1 px-2">@Username</p>
+
+          <!-- Avatar update -->
+          <div class="avatar-container user d-flex flex-row align-items-center">
+            <input
+              type="text"
+              id="avatarInput"
+              placeholder="Enter Avatar URL"
+              value="https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcSdUCZfVLGq6YliwIN9nh9lGJKy49hDb6ZbwOXx-AJnhDkyGyXlDRctOAT_h74ciuRj"
+            />
+            <button id="uploadAvatarBtn">Update Avatar</button>
+          </div>
+          <!-- Avatar end  -->
         <h1 class="my-4">Listings</h1>
         <h2 class="mt-5" id="totalCredit">Current credit</h2>
 
@@ -202,5 +224,6 @@
     <script type="module" src="../common/utils/search.js"></script>
     <script type="module" src="../common/utils/sort.js"></script>
     <script type="module" src="../credits.js"></script>
+    <script type="module" src="../profile/avatar.js"></script>
   </body>
 </html>

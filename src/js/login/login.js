@@ -43,7 +43,7 @@ async function loginUser(user) {
       const username = userLoginData.name;
       addToLocalStorage("username", username);
 
-      window.location.href = "../src/js/profile/index.html";
+      window.location.href = "../src/js/feed/index.html";
     } else {
       console.error("Invalid email domain");
     }
