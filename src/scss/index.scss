@@ -71,9 +71,10 @@ p {
 }
 
 #loginRules p {
-  font-size: $fnt-sz-sm;
+  font-size: 0.75rem;
   text-align: center;
-  color: var(--bs-danger);
+
+  color: #b5b038;
 }
 
 .unregViewLists button {
