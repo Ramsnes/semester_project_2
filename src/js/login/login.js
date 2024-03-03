@@ -29,7 +29,7 @@ async function loginUser(user) {
 
     // Assuming the server returns a token on successful login
     const token = userLoginData.accessToken;
-    console.log(userLoginData); // Shows what the login object contains
+
     // Ensure that the email is from a valid domain and from @noroff
     const validEmailDomains = ["@stud.noroff.no"];
     const isValidEmail = validEmailDomains.some((domain) =>
