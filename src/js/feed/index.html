@@ -35,19 +35,18 @@
     <main>
       <!-- Sort btn  -->
       <section>
-        <div class="user  d-flex flex-column align-items-center">
+        <div class="user d-flex flex-column align-items-center">
           <h1 class="my-4">Auction listings</h1>
           <p class="my-3">Your Avatar</p>
           <div class="profile-pic">
-            <img
-              id="avatarImage"
-              alt="#"
-            />
+            <img id="avatarImage" alt="User profile avatar" />
           </div>
           <p class="username py-1 px-2"></p>
 
           <!-- Avatar update -->
-          <div class="avatar-container  user d-flex flex-column align-items-center">
+          <div
+            class="avatar-container user d-flex flex-column align-items-center"
+          >
             <label for="avatarInput" class="form-label">Enter url</label>
             <input
               type="text"
@@ -57,18 +56,19 @@
             <button id="uploadAvatarBtn">Update Avatar</button>
           </div>
           <button
-          type="submit"
-          id="logoutButton"
-          class="btn logout-btn login-btn btn-primary mt-3"
-        >
-          Logout
-        </button>
-          <!-- Avatar end  -->
+            type="submit"
+            id="logoutButton"
+            class="btn logout-btn login-btn btn-primary mt-3"
+          >
+            Logout
+          </button>
+        </div>
+        <!-- Avatar end  -->
         <h2 class="mt-5" id="totalCredit">Current credit</h2>
 
         <!-- Form to submit a new post -->
         <section
-          class="container  col-lg-10 col-xl-8 col-xxl-6 d-flex flex-column"
+          class="container col-lg-10 col-xl-8 col-xxl-6 d-flex flex-column"
         >
           <h3 class="mt-5 mb-4">Submit your own listing</h3>
           <form id="postForm">
@@ -122,13 +122,11 @@
               <input
                 class="form-control"
                 id="postEndsAt"
-                rows="1"
                 placeholder="Deadline"
                 required
               />
             </div>
 
-            
             <div>
               <button type="submit" class="btn btn-primary my-3">Submit</button>
             </div>
@@ -138,35 +136,36 @@
               <a href="../feed/index.html" class="btn btn-secondary mx-2"
                 >Refresh</a
               >
-             
             </div>
           </form>
         </section>
-    
       </section>
       <!-- search bar -->
-      <section
-        class="container mt-3 d-flex flex-column justify-content-center text-center"
-      >
-        <h2 class="searchH2 mt-5 mb-3">Search posts</h2>
+      <section>
+        <div
+          class="container mt-3 d-flex flex-column justify-content-center text-center"
+        >
+          <h2 class="searchH2 mt-5 mb-3">Search posts</h2>
 
-        <form id="searchForm" class="form-inline my-2 my-lg-0">
-          <input
-            id="searchInput"
-            class="form-control mr-sm-2 my-3"
-            type="search"
-            placeholder="Search by tag"
-            aria-label="Search"
-          />
-          <div class="d-flex flex-column my-3">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-              Search
-            </button>
-          </div>
-     
-        </form>
-        <!-- search bar end -->
-
+          <form id="searchForm" class="form-inline my-2 my-lg-0">
+            <input
+              id="searchInput"
+              class="form-control mr-sm-2 my-3"
+              type="search"
+              placeholder="Search by tag"
+              aria-label="Search"
+            />
+            <div class="d-flex flex-column my-3">
+              <button
+                class="btn btn-outline-success my-2 my-sm-0"
+                type="submit"
+              >
+                Search
+              </button>
+            </div>
+          </form>
+          <!-- search bar end -->
+        </div>
         <div id="postsContainer" class="row justify-content-evenly mt-3"></div>
       </section>
 
@@ -176,7 +175,6 @@
 
       <!-- Footer  -->
       <footer class="py-3 my-4 mt-5">
-       
         <p class="text-center">© 2024 Auctoineering</p>
       </footer>
       <!-- Footer end -->
