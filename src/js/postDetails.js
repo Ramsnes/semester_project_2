@@ -59,6 +59,20 @@ document.addEventListener("DOMContentLoaded", async () => {
 function renderPostDetails(postDetails) {
   const postContainer = document.getElementById("postDetailsContainer");
 
+  // Parse the deadline date
+  const deadlineDate = new Date(postDetails.endsAt);
+
+  // Format the deadline date
+  const formattedDeadline = deadlineDate.toLocaleString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    timeZone: "UTC", // Ensure the time zone is UTC
+  });
+
   // Create HTML elements for the post details
   const postElement = document.getElementById("postDetails");
 
@@ -69,14 +83,14 @@ function renderPostDetails(postDetails) {
     <div class="image-container">
       <img class="post-image" src="${postDetails.media[0]}"/>
       </div>
-      <p id="postEndsAt">Deadline: ${postDetails.endsAt}</p>
+      <p id="postEndsAt">Deadline: ${formattedDeadline}</p>
       <div>
             <label for="bidAmount">Enter bid amount</label>
             <input type="number" id="bidAmount" required />
             <button id="submitBidBtn">Submit bid</button>
       </div>
       <div id="bidsContainer"></div>
-    <a href="edit-post.html?id=${postDetails.id}" class="btn btn-primary">Navigate to Edit Post</a>
+    
     `;
 
   // Prepend the post details to the post container

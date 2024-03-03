@@ -21,9 +21,16 @@
   max-width: 500px;
   margin: 0 auto;
   display: block;
+  transform: $scale-9;
+  transition: $trans-0-3-ease;
+  border-radius: 10px;
 }
 
-.bids-container {
+.post-image:hover {
+  transform: $scale-10;
+}
+
+#bids-container {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -34,4 +41,15 @@
   display: flex;
   flex-direction: column;
   align-items: start;
+  border: 3px solid beige;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 5px;
+  transform: $scale-9;
+  transition: $trans-0-3-ease;
+  background: rgb(13 110 253 / 20%);
+}
+
+.bid-container:hover {
+  transform: $scale-10;
 }
