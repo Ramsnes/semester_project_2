@@ -35,8 +35,9 @@
     <main>
       <!-- Sort btn  -->
       <section>
-        <div class="user d-flex flex-column align-items-center">
-          <h1 class="my-3">Avatar</h1>
+        <div class="user  d-flex flex-column align-items-center">
+          <h1 class="my-4">Auction listings</h1>
+          <p class="my-3">Your Avatar</p>
           <div class="profile-pic">
             <img
               id="avatarImage"
@@ -46,7 +47,7 @@
           <p class="username py-1 px-2"></p>
 
           <!-- Avatar update -->
-          <div class="avatar-container user d-flex flex-row align-items-center">
+          <div class="avatar-container  user d-flex flex-row align-items-center">
             <input
               type="text"
               id="avatarInput"
@@ -54,15 +55,21 @@
             />
             <button id="uploadAvatarBtn">Update Avatar</button>
           </div>
+          <button
+          type="submit"
+          id="logoutButton"
+          class="btn login-btn btn-primary mt-3"
+        >
+          Logout
+        </button>
           <!-- Avatar end  -->
-        <h1 class="my-4">Listings</h1>
         <h2 class="mt-5" id="totalCredit">Current credit</h2>
 
         <!-- Form to submit a new post -->
         <section
-          class="container col-lg-10 col-xl-8 col-xxl-6 d-flex flex-column"
+          class="container  col-lg-10 col-xl-8 col-xxl-6 d-flex flex-column"
         >
-          <h2 class="mt-5 mb-4">Submit your own listing</h2>
+          <h3 class="mt-5 mb-4">Submit your own listing</h3>
           <form id="postForm">
             <div class="mb-3 d-flex flex-column align-items-center">
               <label for="postTitle" class="form-label">Title</label>
@@ -128,18 +135,12 @@
               <a href="../feed/index.html" class="btn btn-secondary mx-2"
                 >Refresh</a
               >
-              <button
-                type="submit"
-                id="logoutButton"
-                class="btn login-btn btn-primary"
-              >
-                Logout
-              </button>
+             
             </div>
           </form>
         </section>
         <!-- form to submit a new post end -->
-        <div
+        <!-- <div
           id="searchContainer"
           class="dropdown d-flex justify-content-center"
         >
@@ -153,14 +154,13 @@
             <li><a class="dropdown-item" href="#" id="sortAZ">a-z</a></li>
             <li><a class="dropdown-item" href="#" id="sortZA">z-a</a></li>
           </ul>
-        </div>
+        </div> -->
       </section>
-      <!-- Sort btn end  -->
       <!-- search bar -->
       <section
         class="container mt-3 d-flex flex-column justify-content-center text-center"
       >
-        <h2 class="mt-5 mb-3">Search posts</h2>
+        <h2 class="searchH2 mt-5 mb-3">Search posts</h2>
 
         <form id="searchForm" class="form-inline my-2 my-lg-0">
           <input
@@ -175,7 +175,7 @@
               Search
             </button>
           </div>
-          <button
+          <!-- <button
             class="btn btn-secondary dropdown-toggle"
             type="button"
             id="dropdownMenuButton1"
@@ -183,7 +183,7 @@
             aria-expanded="false"
           >
             Sort posts
-          </button>
+          </button> -->
         </form>
         <!-- search bar end -->
 
@@ -204,7 +204,7 @@
             <a href="#" class="nav-link px-2">Listings</a>
           </li>
         </ul>
-        <p class="text-center">© 2023 Auctoineering</p>
+        <p class="text-center">© 2024 Auctoineering</p>
       </footer>
       <!-- Footer end -->
     </main>

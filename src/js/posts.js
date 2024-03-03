@@ -81,5 +81,5 @@ function renderPost(post) {
 
 // Function to navigate to edit-post.html immediately after creation
 function navigateToEditPost(postId) {
-  window.location.href = `/idPage/edit-post.html?id=${postId}`;
+  window.location.href = `../idPage/index.html?id=${postId}`;
 }

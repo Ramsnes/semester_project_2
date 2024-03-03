@@ -70,7 +70,7 @@ function renderPostDetails(postDetails) {
     hour: "numeric",
     minute: "numeric",
     second: "numeric",
-    timeZone: "UTC", // Ensure the time zone is UTC
+    timeZone: "UTC",
   });
 
   // Create HTML elements for the post details

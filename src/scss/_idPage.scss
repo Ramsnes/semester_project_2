@@ -47,9 +47,15 @@
   margin: 5px;
   transform: $scale-9;
   transition: $trans-0-3-ease;
-  background: rgb(13 110 253 / 20%);
+  // background: rgb(13 110 253 / 20%);
+  background: black;
 }
 
 .bid-container:hover {
   transform: $scale-10;
+}
+
+.card-title,
+.card-text {
+  color: beige;
 }
