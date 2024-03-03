@@ -54,22 +54,25 @@
   border-color: $black;
 }
 
-#logoutButton {
-  background: $black;
-  color: beige;
-  border-color: $black;
-}
-
-#logoutButton:hover {
-  background: beige;
-  color: $black;
-  border-color: $black;
-}
-
 .heart-icon path {
   fill: $pink;
 }
 
 .username {
   border-radius: $brdr-rdius-10;
+}
+
+@media (max-width: 450px) {
+  .profile-pic img {
+    height: 7rem;
+  }
+
+  .avatar-container {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .avatar-container {
+    gap: 10px;
+  }
 }

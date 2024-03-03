@@ -39,7 +39,7 @@ footer .nav-link {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 h1 {
@@ -88,12 +88,14 @@ form {
   flex-direction: $flx-drct-cl;
 }
 
-.login-btn {
+.login-btn,
+.logout-btn {
   background: $gold;
   color: $black;
 }
 
-.login-btn:hover {
+.login-btn:hover,
+.logout-btn:hover {
   background: $gold-hvr;
 }
 
