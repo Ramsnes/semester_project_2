@@ -61,5 +61,3 @@ form.addEventListener("submit", async (event) => {
   };
   await loginUser(userLoginDetails); //hoisted
 });
-
-// I want to dynamically fetch the username of the logged in user

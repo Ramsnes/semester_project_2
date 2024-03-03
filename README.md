@@ -1,4 +1,4 @@
-# semester_project_2 - Auctioneer
+# Semester project 2 - Auctioneer
 
 ## Description
 
@@ -12,11 +12,11 @@ Features present are:
 
 ## Build using
 
-HTML
-CSS
-SASS - scss
-Bootstrap
-JavaScript - Vanilla
+- HTML
+- CSS
+- SASS - scss
+- Bootstrap
+- JavaScript - Vanilla
 
 ## Frameworks, tools and plugins
 

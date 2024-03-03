@@ -118,8 +118,7 @@ async function submitBid(postId, bidAmount) {
     );
 
     // Navigation and alert msg
-    // Kommentert ut for at det ikke refresher med èn gang
-    // window.location.href = "../feed/index.html";
+
     alert("Bid placed, unless already ended!");
 
     // Bid success msg

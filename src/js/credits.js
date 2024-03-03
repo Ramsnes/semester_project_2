@@ -1,3 +1,4 @@
+// credits.js
 import { fetcher } from "../js/fetcher.js";
 import { getFromLocalStorage } from "../js/common/utils/localStorageUtil.js";
 import { BASE_API_URL } from "./common/constants.js";
